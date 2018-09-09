@@ -8,7 +8,7 @@ mongoose.connect(config.mongodb.url);
 
 var userSchema = new Schema({
     mobile                  : { type: String, required: true, unique: true },
-    name                    : { type: String, required: true },
+    name                    : { type: String },
     otp                     : { type: String },
     otpCreatedAt            : { type: Date},
     
