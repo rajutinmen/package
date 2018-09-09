@@ -56,9 +56,9 @@ app.get('/', function(req, res) {
     });
 });
 
-app.route('/api/user', UserRoutes.AuthRouter);
-app.use('/api/order', OrderRoutes.AuthRouter);
-app.use('/api/product', productRoutes.AuthRouter);
+app.use('/api/users/', UserRoutes.userRoutes);
+app.use('/api/orders/', OrderRoutes.AuthRouter);
+app.use('/api/products/', productRoutes.AuthRouter);
 
 http.listen(config.port, function () {
 	console.log('server up and running at ', config.port);

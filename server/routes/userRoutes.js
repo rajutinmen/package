@@ -5,7 +5,7 @@ var userControllers = require('./../controllers/userController');
 
 /**
  * @swagger
- * /api/users/generateOTP:
+ * /api/users/otp:
  *   post:
  *     tags:
  *       - User OTP
@@ -20,7 +20,7 @@ var userControllers = require('./../controllers/userController');
  * 		 500:
  * 		   description: Sends Internal Server error message
  */
-Router.post('generateOTP' , userControllers.generateOTP);
+Router.post('/otp' , userControllers.generateOTP);
 
 /**
  * @swagger

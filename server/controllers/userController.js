@@ -10,12 +10,12 @@ userServices = {
             let user = await userCollection.findOne({"mobile": userMobile})
             if(user){
                user.otp = otp;
-               user.otpCreatedAt = Date.now;
+               user.otpCreatedAt = Date.now();
                await util.sendMessage(otp);
                return await user.save(); 
             }
             else{
-               var newUser = userCollection.create({"mobile": userMobile,"otp": otp,"otpCreatedAt": Date.now})
+               var newUser = userCollection.create({"mobile": userMobile,"otp": otp,"otpCreatedAt": Date.now()})
                await util.sendMessage(otp);
                return newUser;
             }
@@ -36,7 +36,7 @@ userServices = {
     },
 
     update: async function(userId, user) {
-        return await userCollection({"_id": userId},user)
+        return await userCollection.update({"_id": userId}, { $set: { name: user.name }});
     }
 }
 
