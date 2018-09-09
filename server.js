@@ -17,9 +17,9 @@ app.use('/api-docs', express.static(__dirname + '/api-docs/'));
 
 global.__base = __dirname + '/';
 
-const UserRoutes = require('./server/Routes/userRoutes');
-const OrderRoutes = require('./server/Routes/orderRoutes');
-const productRoutes = require('./server/Routes/productRoutes');
+const UserRoutes = require('./server/routes/userRoutes');
+const OrderRoutes = require('./server/routes/orderRoutes');
+const productRoutes = require('./server/routes/productRoutes');
 
 app.use(function(req, res, next) {
     if ('OPTIONS' == req.method) {
