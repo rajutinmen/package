@@ -7,7 +7,7 @@ module.exports = {
             charset: 'numeric'
         });
     },
-    sendMessage: function(otp) {
+    sendMessage: async function(otp) {
         let message = "Hi, Your OTP is" + otp;
         console.log(message);
         return true;

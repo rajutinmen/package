@@ -10,6 +10,7 @@ var userSchema = new Schema({
     mobile                  : { type: String, required: true, unique: true },
     name                    : { type: String, required: true },
     otp                     : { type: String },
+    otpCreatedAt            : { type: Date},
     
     createdAt               : { type: Date, default: Date.now },
     updatedAt               : { type: Date, default: Date.now }
