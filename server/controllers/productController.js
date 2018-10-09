@@ -50,12 +50,12 @@ module.exports = {
     createProduct: function(req, res) {
         let response = {};
         productServices.add(req.body).then((product) => {
-            response.message = "product created successfully"
-            response.data = product
+            response.message = "product created successfully";
+            response.data = product;
             res.status(201).json(response);
         }).catch((error) => {
             response.message = "failed to create product"
-            response.data = product
+            response.error = error.message;
             res.status(500).json(response);
         })
     },
@@ -68,7 +68,7 @@ module.exports = {
             res.status(200).json(response)
         }).catch((error) => {
             response.message = "failed to update product"
-            response.error = error
+            response.error = error.message;
             res.status(500).json(response);
         })
     }
